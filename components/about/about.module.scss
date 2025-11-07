@@ -1,0 +1,236 @@
+.container {
+  width: 100%;
+}
+
+.body {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+  min-height: 600px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.introduction {
+  .description {
+    font-size: 1.6rem;
+    line-height: 1.8;
+    color: var(--text-primary);
+    margin-bottom: 1.5rem;
+    opacity: 0.9;
+
+    .greeting {
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      color: var(--text-primary);
+      line-height: 1.2;
+
+      .name {
+        background: linear-gradient(135deg, var(--accent-color), #4ecdc4);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-weight: 800;
+      }
+
+      .wave {
+        display: inline-block;
+        margin-left: 0.5rem;
+        font-size: 2rem;
+      }
+    }
+
+    .highlight {
+      color: var(--accent-color);
+      font-weight: 600;
+      position: relative;
+
+      &:hover {
+        color: #4ecdc4;
+        transition: color 0.3s ease;
+      }
+    }
+
+    .location {
+      color: #ff6b6b;
+      font-weight: 600;
+      position: relative;
+
+      &::after {
+        content: "🇳🇬";
+        margin-left: 0.3rem;
+      }
+    }
+  }
+}
+
+.actions {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+
+  .primaryCta,
+  .secondaryCta {
+    flex: 1;
+    min-width: 200px;
+    text-align: center;
+  }
+}
+
+.imageSection {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.imageContainer {
+  position: relative;
+  width: 90%;
+  max-width: 450px;
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.imageBackground {
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  right: -20px;
+  bottom: -20px;
+  background: linear-gradient(
+    135deg,
+    rgba(29, 185, 84, 0.1),
+    rgba(78, 205, 196, 0.05)
+  );
+  border-radius: 50%;
+  filter: blur(20px);
+  z-index: 0;
+}
+
+.image {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+
+  svg {
+    width: 100%;
+    height: auto;
+    max-width: 400px;
+    filter: drop-shadow(0 10px 30px rgba(29, 185, 84, 0.2));
+  }
+}
+
+.floatingElement1,
+.floatingElement2,
+.floatingElement3 {
+  position: absolute;
+  font-size: 2rem;
+  z-index: 3;
+  pointer-events: none;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+}
+
+.floatingElement1 {
+  top: 10%;
+  right: 10%;
+}
+
+.floatingElement2 {
+  bottom: 20%;
+  left: 10%;
+}
+
+.floatingElement3 {
+  top: 50%;
+  right: 5%;
+}
+
+@media screen and (max-width: 1024px) {
+  .body {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    text-align: center;
+  }
+
+  .imageSection {
+    order: -1;
+    min-height: 400px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .body {
+    gap: 2rem;
+  }
+
+  .introduction .greeting {
+    font-size: 2rem;
+  }
+
+  .actions {
+    flex-direction: column;
+
+    .primaryCta,
+    .secondaryCta {
+      width: 100%;
+    }
+  }
+
+  .imageContainer {
+    max-width: 350px;
+  }
+
+  .floatingElement1,
+  .floatingElement2,
+  .floatingElement3 {
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .introduction {
+    .greeting {
+      font-size: 1.8rem;
+
+      .wave {
+        font-size: 1.5rem;
+      }
+    }
+
+    .description {
+      font-size: 1.1rem;
+    }
+  }
+
+  .highlightCard {
+    padding: 1rem;
+
+    .highlightIcon {
+      font-size: 2rem;
+    }
+  }
+
+  .imageContainer {
+    max-width: 300px;
+  }
+
+  .floatingElement1,
+  .floatingElement2,
+  .floatingElement3 {
+    font-size: 1.2rem;
+  }
+}
