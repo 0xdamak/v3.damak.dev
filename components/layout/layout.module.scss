@@ -1,0 +1,310 @@
+.container {
+  position: relative;
+  max-width: 1400px;
+  margin: 0 auto;
+  background-color: var(--bg-primary);
+}
+
+.scrollProgressContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.scrollProgress {
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent-color), #4ecdc4);
+  transform-origin: left;
+  box-shadow: 0 0 10px rgba(29, 185, 84, 0.5);
+}
+
+.backgroundElements {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  pointer-events: none;
+  z-index: -2;
+  overflow: hidden;
+}
+
+.particles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.particle {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: var(--accent-color);
+  border-radius: 50%;
+  opacity: 0.3;
+  filter: blur(1px);
+}
+
+.gradientOrbs {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.orb1 {
+  position: absolute;
+  top: 20%;
+  left: -10%;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(
+    circle,
+    rgba(29, 185, 84, 0.1) 0%,
+    transparent 70%
+  );
+  border-radius: 50%;
+  filter: blur(40px);
+  animation: float1 20s ease-in-out infinite;
+}
+
+.orb2 {
+  position: absolute;
+  top: 60%;
+  right: -15%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(
+    circle,
+    rgba(78, 205, 196, 0.08) 0%,
+    transparent 70%
+  );
+  border-radius: 50%;
+  filter: blur(50px);
+  animation: float2 25s ease-in-out infinite reverse;
+}
+
+.orb3 {
+  position: absolute;
+  bottom: 10%;
+  left: 30%;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(
+    circle,
+    rgba(29, 185, 84, 0.06) 0%,
+    transparent 70%
+  );
+  border-radius: 50%;
+  filter: blur(30px);
+  animation: float3 30s ease-in-out infinite;
+}
+
+.layoutWrapper {
+  position: relative;
+  z-index: 1;
+}
+
+.mainContent {
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+}
+
+.scrollToTop {
+  position: fixed;
+  bottom: 2rem;
+  left: 2rem;
+  width: 50px;
+  height: 50px;
+  background: rgba(29, 185, 84, 0.9);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 50;
+  box-shadow: 0 4px 20px rgba(29, 185, 84, 0.3);
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: var(--accent-color);
+    box-shadow: 0 6px 25px rgba(29, 185, 84, 0.4);
+    transform: translateY(-2px);
+  }
+
+  svg {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+.pageTransitionOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: var(--bg-primary);
+  z-index: 9998;
+  pointer-events: none;
+}
+
+@media screen and (max-width: 1024px) {
+  .orb1 {
+    width: 300px;
+    height: 300px;
+    left: -20%;
+  }
+
+  .orb2 {
+    width: 350px;
+    height: 350px;
+    right: -20%;
+  }
+
+  .orb3 {
+    width: 200px;
+    height: 200px;
+  }
+
+  .progressIconWrapper {
+    bottom: 1.5rem;
+    right: 1.5rem;
+  }
+
+  .scrollToTop {
+    bottom: 1.5rem;
+    left: 1.5rem;
+    width: 45px;
+    height: 45px;
+
+    svg {
+      width: 18px;
+      height: 18px;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    max-width: 100%;
+  }
+
+  .orb1,
+  .orb2,
+  .orb3 {
+    display: none;
+  }
+
+  .particle {
+    width: 4px;
+    height: 4px;
+  }
+
+  .progressIconWrapper {
+    bottom: 1rem;
+    right: 1rem;
+  }
+
+  .scrollToTop {
+    bottom: 1rem;
+    left: 1rem;
+    width: 40px;
+    height: 40px;
+
+    svg {
+      width: 16px;
+      height: 16px;
+    }
+  }
+
+  .scrollProgressContainer {
+    height: 3px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .particles {
+    .particle:nth-child(n + 5) {
+      display: none;
+    }
+  }
+
+  .scrollToTop {
+    width: 35px;
+    height: 35px;
+
+    svg {
+      width: 14px;
+      height: 14px;
+    }
+  }
+
+  .scrollProgressContainer {
+    height: 2px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .orb1,
+  .orb2,
+  .orb3,
+  .particle {
+    animation: none;
+  }
+
+  .navigationWrapper {
+    transition: none;
+  }
+
+  .scrollToTop {
+    transition: none;
+  }
+}
+
+@keyframes float1 {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(100px, -50px) scale(1.1);
+  }
+  66% {
+    transform: translate(-50px, 100px) scale(0.9);
+  }
+}
+
+@keyframes float2 {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(-80px, -100px) scale(1.2);
+  }
+}
+
+@keyframes float3 {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  25% {
+    transform: translate(50px, -30px) scale(1.1);
+  }
+  75% {
+    transform: translate(-30px, 50px) scale(0.95);
+  }
+}
