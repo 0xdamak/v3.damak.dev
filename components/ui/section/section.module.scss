@@ -1,0 +1,32 @@
+.section {
+  margin: 0 auto;
+  padding: 10rem 6rem;
+  max-width: 100rem;
+  position: relative;
+  overflow: hidden;
+
+  .heading {
+    margin-bottom: 2rem;
+
+    h2,
+    h3 {
+      text-transform: capitalize;
+      margin-bottom: 0.5rem;
+      span {
+        text-transform: initial;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 760px) {
+  .section {
+    padding: 8rem 4rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .section {
+    padding: 4rem 2rem;
+  }
+}
