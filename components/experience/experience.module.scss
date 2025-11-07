@@ -1,0 +1,439 @@
+.container {
+  width: 100%;
+}
+
+.experienceSection {
+  margin-bottom: 4rem;
+}
+
+.timeline {
+  position: relative;
+  padding: 1rem;
+}
+
+.timelineTrack {
+  position: absolute;
+  left: 3.9rem;
+  top: 2rem;
+  bottom: 4rem;
+  width: 0.2rem;
+  background: linear-gradient(
+    to bottom,
+    var(--accent-color),
+    rgba(29, 185, 84, 0.3),
+    var(--accent-color)
+  );
+  border-radius: 0.1rem;
+}
+
+.timelineItem {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 3rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &:hover {
+    .timelineContent {
+      background: rgba(255, 255, 255, 0.05);
+      border-color: rgba(29, 185, 84, 0.3);
+    }
+  }
+
+  &.active {
+    .timelineMarker {
+      box-shadow: 0 0 20px rgba(29, 185, 84, 0.4);
+    }
+
+    .timelineContent {
+      background: rgba(29, 185, 84, 0.05);
+      border-color: var(--accent-color);
+      box-shadow: 0 8px 32px rgba(29, 185, 84, 0.1);
+    }
+  }
+}
+
+.timelineMarker {
+  position: relative;
+  z-index: 20;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--accent-color);
+  border: 4px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  backdrop-filter: blur(10px);
+  flex-shrink: 0;
+
+  .timelineLogo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      border-radius: 50%;
+      scale: 1.2;
+    }
+  }
+}
+
+.timelineContent {
+  flex: 1;
+  margin-left: 2rem;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 2rem;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.timelineHeader {
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+}
+
+.timelineTitle {
+  margin-bottom: 1rem;
+
+  h3 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--text-primary);
+  }
+
+  h4 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--accent-color);
+    margin-bottom: 0;
+  }
+}
+
+.timelineMeta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+
+  span {
+    font-size: 1.2rem;
+    font-weight: 500;
+    padding: 0.4rem 0.8rem;
+    border-radius: 12px;
+    white-space: nowrap;
+    line-height: 1;
+  }
+
+  .period {
+    background: rgba(29, 185, 84, 0.1);
+    color: var(--accent-color);
+    border: 1px solid rgba(29, 185, 84, 0.2);
+  }
+
+  .duration {
+    background: rgba(78, 205, 196, 0.1);
+    color: #4ecdc4;
+    border: 1px solid rgba(78, 205, 196, 0.2);
+  }
+
+  .employmentType {
+    background: rgba(255, 107, 107, 0.1);
+    color: #ff6b6b;
+    border: 1px solid rgba(255, 107, 107, 0.2);
+  }
+
+  .workType {
+    background: rgba(66, 135, 245, 0.1);
+    color: #4287f5;
+    border: 1px solid rgba(66, 135, 245, 0.2);
+  }
+
+  .location {
+    color: var(--text-primary);
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+}
+
+.timelineDetails {
+  overflow: hidden;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.achievements {
+  margin-bottom: 1.6rem;
+
+  h5 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    font-size: 1.4rem;
+
+    li {
+      position: relative;
+      padding-left: 2rem;
+      color: var(--text-primary);
+      line-height: 1.6;
+
+      &:not(:last-child) {
+        margin-bottom: 1rem;
+      }
+
+      &::before {
+        content: "✨";
+        position: absolute;
+        left: 0;
+        top: 0;
+        font-size: 1.4rem;
+      }
+    }
+  }
+}
+
+.technologies {
+  h5 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+  }
+}
+
+.techTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+
+  .techTag {
+    background: rgba(29, 185, 84, 0.1);
+    color: var(--accent-color);
+    border: 1px solid rgba(29, 185, 84, 0.2);
+    padding: 0.5rem 1rem;
+    border-radius: 12px;
+    font-size: 1.2rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    line-height: 1;
+    white-space: nowrap;
+
+    &:hover {
+      background: rgba(29, 185, 84, 0.2);
+      border-color: var(--accent-color);
+      transform: translateY(-2px);
+    }
+  }
+}
+
+.highlightsSection {
+  padding: 1rem;
+  margin-bottom: 3rem;
+
+  .highlightsTitle {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    text-align: center;
+    margin-bottom: 3rem;
+
+    background: linear-gradient(
+      135deg,
+      var(--text-primary),
+      var(--accent-color)
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+.highlightsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+.highlightCard {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 2rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: var(--accent-color);
+    box-shadow: 0 8px 32px rgba(29, 185, 84, 0.1);
+  }
+
+  .highlightIcon {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+    display: block;
+  }
+
+  h4 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+  }
+
+  p {
+    font-size: 1.4rem;
+    color: var(--text-primary);
+    opacity: 0.8;
+    line-height: 1.6;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .highlightsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .timelineHeader {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .timelineTrack {
+    left: 3.4rem;
+  }
+
+  .timelineMarker {
+    width: 50px;
+    height: 50px;
+
+    .timelineLogo {
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+
+  .timelineContent {
+    margin-left: 1rem;
+    padding: 1.5rem;
+  }
+
+  .timelineMeta {
+    span {
+      padding: 0.15rem 0.6rem;
+    }
+  }
+
+  .highlightCard {
+    padding: 1.5rem;
+
+    .highlightIcon {
+      font-size: 2.5rem;
+    }
+  }
+
+  .highlightsSection {
+    .highlightsTitle {
+      font-size: 1.8rem;
+    }
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .timelineItem {
+    margin-bottom: 2rem;
+  }
+
+  .timelineTrack {
+    left: 28px;
+    bottom: 3rem;
+  }
+
+  .timelineMarker {
+    width: 40px;
+    height: 40px;
+
+    .timelineLogo {
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+
+  .timelineContent {
+    padding: 1.2rem;
+  }
+
+  .techTags {
+    gap: 0.4rem;
+
+    .techTag {
+      padding: 0.3rem 0.6rem;
+    }
+  }
+
+  .highlightCard {
+    padding: 1.2rem;
+    text-align: left;
+
+    .highlightIcon {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .highlightsSection {
+    .highlightsTitle {
+      font-size: 1.5rem;
+      margin-bottom: 2rem;
+    }
+  }
+
+  .experienceSection {
+    margin-bottom: 3rem;
+  }
+
+  .highlightsSection {
+    margin-bottom: 2rem;
+  }
+
+  .timelineTrack {
+    left: 2.3rem;
+    bottom: 2.5rem;
+  }
+
+  .timeline {
+    padding: 0.5rem;
+  }
+}
