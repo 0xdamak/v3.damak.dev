@@ -1,0 +1,409 @@
+.footer {
+  position: relative;
+  background: var(--bg-secondary);
+  border-top: 1px solid var(--border);
+  overflow: hidden;
+  margin-top: 5rem;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      var(--accent-color) 50%,
+      transparent 100%
+    );
+  }
+}
+
+.backgroundElements {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.gradientOrb1 {
+  position: absolute;
+  top: -50%;
+  left: -20%;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(
+    circle,
+    rgba(29, 185, 84, 0.1) 0%,
+    transparent 70%
+  );
+  border-radius: 50%;
+  filter: blur(40px);
+  animation: float1 20s ease-in-out infinite;
+}
+
+.gradientOrb2 {
+  position: absolute;
+  bottom: -50%;
+  right: -20%;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(
+    circle,
+    rgba(78, 205, 196, 0.08) 50%,
+    transparent 70%
+  );
+  border-radius: 50%;
+  filter: blur(30px);
+  animation: float2 25s ease-in-out infinite reverse;
+}
+
+.container {
+  max-width: 100rem;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+  position: relative;
+  z-index: 2;
+}
+
+.logoSection {
+  text-align: center;
+  margin-bottom: 4rem;
+  padding-bottom: 3rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.logo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  background: rgba(29, 185, 84, 0.1);
+  border: 2px solid rgba(29, 185, 84, 0.3);
+  border-radius: 50%;
+  margin-bottom: 1.5rem;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+
+  &:hover {
+    background: rgba(29, 185, 84, 0.15);
+    border-color: var(--accent-color);
+    transform: scale(1.05);
+    box-shadow: 0 10px 30px rgba(29, 185, 84, 0.2);
+  }
+
+  svg {
+    width: 40px;
+    height: 40px;
+    fill: var(--accent-color);
+  }
+}
+
+.brandName {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+  background: linear-gradient(135deg, var(--text-primary), var(--accent-color));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.tagline {
+  font-size: 1.6rem;
+  color: var(--text-primary);
+  opacity: 0.8;
+  margin: 0;
+}
+
+.footerContent {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 3rem;
+  margin-bottom: 3rem;
+}
+
+.linksSection {
+  h4 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--accent-color);
+    margin-bottom: 1.5rem;
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -0.5rem;
+      left: 0;
+      width: 30px;
+      height: 2px;
+      background: var(--accent-color);
+      border-radius: 1px;
+    }
+  }
+}
+
+.quickLinks {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  li {
+    margin-bottom: 0.8rem;
+
+    a {
+      color: var(--text-primary);
+      text-decoration: none;
+      font-size: 1.5rem;
+      transition: all 0.3s ease;
+      display: inline-block;
+      position: relative;
+
+      &::before {
+        content: "→";
+        opacity: 0;
+        transform: translateX(-10px);
+        transition: all 0.3s ease;
+        margin-right: 0.5rem;
+        color: var(--accent-color);
+      }
+
+      &:hover {
+        color: var(--accent-color);
+        transform: translateX(10px);
+
+        &::before {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+    }
+  }
+}
+
+.socialSection {
+  h4 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--accent-color);
+    margin-bottom: 1.5rem;
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -0.5rem;
+      left: 0;
+      width: 30px;
+      height: 2px;
+      background: var(--accent-color);
+      border-radius: 1px;
+    }
+  }
+}
+
+.socialLinks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.socialLink {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.8rem 1.2rem;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  text-decoration: none;
+  color: var(--text-primary);
+  font-size: 1.5rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+
+  &:hover {
+    background: rgba(29, 185, 84, 0.1);
+    border-color: var(--accent-color);
+    color: var(--accent-color);
+    box-shadow: 0 5px 20px rgba(29, 185, 84, 0.15);
+  }
+}
+
+.socialIcon {
+  font-size: 1.2rem;
+}
+
+.socialName {
+  font-weight: 500;
+}
+
+.bottomBar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 0;
+  border-top: 1px solid var(--border);
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.copyright {
+  p {
+    margin: 0;
+    color: var(--text-primary);
+    opacity: 0.7;
+    font-size: 1.4rem;
+    text-align: center;
+
+    &:first-child {
+      margin-bottom: 0.3rem;
+    }
+  }
+}
+
+.heart {
+  color: #e74c3c;
+  animation: heartbeat 2s ease-in-out infinite;
+}
+
+@media screen and (max-width: 768px) {
+  .logoSection {
+    margin-bottom: 3rem;
+    padding-bottom: 2rem;
+  }
+
+  .logo {
+    width: 70px;
+    height: 70px;
+
+    svg {
+      width: 35px;
+      height: 35px;
+    }
+  }
+
+  .brandName {
+    font-size: 1.6rem;
+  }
+
+  .tagline {
+    font-size: 1.2rem;
+  }
+
+  .footerContent {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .socialLinks {
+    justify-content: center;
+  }
+
+  .bottomBar {
+    flex-direction: column;
+    text-align: center;
+    gap: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .socialLinks {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .socialLink {
+    justify-content: center;
+    padding: 1rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .footer {
+    margin-bottom: 6rem;
+  }
+
+  .logoSection {
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+  }
+
+  .logo {
+    width: 60px;
+    height: 60px;
+
+    svg {
+      width: 30px;
+      height: 30px;
+    }
+  }
+
+  .brandName {
+    font-size: 1.4rem;
+  }
+
+  .tagline {
+    font-size: 1.5rem;
+  }
+
+  .footerContent {
+    gap: 2rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gradientOrb1,
+  .gradientOrb2,
+  .heart {
+    animation: none;
+  }
+
+  .logo,
+  .socialLink,
+  .quickLinks a {
+    transition: none;
+  }
+}
+
+@keyframes float1 {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(50px, -30px) scale(1.1);
+  }
+  66% {
+    transform: translate(-30px, 50px) scale(0.9);
+  }
+}
+
+@keyframes float2 {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(-40px, -50px) scale(1.2);
+  }
+}
+
+@keyframes heartbeat {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(2.4);
+  }
+}
