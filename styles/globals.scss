@@ -1,0 +1,109 @@
+:root {
+  --accent-color: #1db954;
+  --emphasis: #ffffff;
+  --border: #353535;
+  --bg-primary: #121212;
+  --bg-secondary: #181818;
+  --bg-tertiary: #353535;
+  --bg-white: #ffffff;
+  --bg-black: #000000;
+  --text-white: #ffffff;
+  --text-primary: #c4c4c4;
+  --text-secondary: #9b9b9b;
+  --text-tertiary: #777777;
+  --btn-text-color: #ffffff;
+  --btn-text-color-hover: #ffffff;
+  --box-shadow: 1px 1px 6px 0px rgb(0 0 0 / 25%);
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: background-color 0.4s;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  font-size: 1.4rem;
+  font-weight: 400;
+  line-height: 2.8rem;
+  color: var(--text-white);
+  background-color: var(--bg-tertiary);
+}
+
+h1 {
+  font-size: 8rem;
+  font-weight: 700;
+  line-height: 8rem;
+}
+
+h2 {
+  font-weight: 700;
+  font-size: 3rem;
+  line-height: 3.6rem;
+}
+
+h3 {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24px;
+  color: var(--text-secondary);
+}
+
+p {
+  font-style: normal;
+  font-weight: 400;
+}
+
+a,
+a:visited,
+a:hover {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+button,
+button:visited {
+  border: none;
+  box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%);
+  cursor: pointer;
+}
+
+fieldset {
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+::selection {
+  background-color: var(--accent-color);
+  color: #ffffff;
+}
+
+::-webkit-scrollbar {
+  width: 0.4rem;
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--bg-tertiary);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #cacaca;
+  border-radius: 2rem;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--accent-color);
+}
