@@ -5,6 +5,12 @@ import Blucolar from "../../public/images/blucolar.jpeg";
 import Swirge from "../../public/images/swirge.png";
 import Reliance from "../../public/images/reliance.jpg";
 import Hng from "../../public/images/hng.jpg";
+import {
+  Leadership,
+  Innovation,
+  Collaboration,
+  Growth,
+} from "../../public/svg/icons";
 
 export const experiences = [
   {
@@ -138,28 +144,28 @@ export const experiences = [
 export const careerHighlights = [
   {
     id: "leadership",
-    icon: "🎯",
+    icon: <Leadership />,
     title: "Leadership",
     description:
       "Led development teams and mentored junior developers across multiple projects",
   },
   {
     id: "innovation",
-    icon: "🚀",
+    icon: <Innovation />,
     title: "Innovation",
     description:
       "Introduced modern development practices and improved application performance",
   },
   {
     id: "collaboration",
-    icon: "🤝",
+    icon: <Collaboration />,
     title: "Collaboration",
     description:
       "Successfully worked with cross-functional teams to deliver complex projects",
   },
   {
     id: "growth",
-    icon: "📈",
+    icon: <Growth />,
     title: "Growth",
     description:
       "Continuously evolved from intern to senior engineer with proven track record",

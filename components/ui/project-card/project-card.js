@@ -2,6 +2,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
 import { Button } from "../button";
 import { slideVariants, cardVariants, getStatusColor } from "./utils";
+import { Star } from "../../../public/svg/icons";
 import Image from "next/image";
 import classes from "./project-card.module.scss";
 
@@ -26,7 +27,7 @@ export function ProjectCard({
     setIsImageLoading(true);
     setDirection(1);
     setCurrentImageIndex((prev) =>
-      prev === project.images.length - 1 ? 0 : prev + 1
+      prev === project.images.length - 1 ? 0 : prev + 1,
     );
   }
 
@@ -36,7 +37,7 @@ export function ProjectCard({
     setIsImageLoading(true);
     setDirection(-1);
     setCurrentImageIndex((prev) =>
-      prev === 0 ? project.images.length - 1 : prev - 1
+      prev === 0 ? project.images.length - 1 : prev - 1,
     );
   }
 
@@ -64,7 +65,7 @@ export function ProjectCard({
       setIsImageLoading(true);
       setDirection(1);
       setCurrentImageIndex((prev) =>
-        prev === project.images.length - 1 ? 0 : prev + 1
+        prev === project.images.length - 1 ? 0 : prev + 1,
       );
     }, 4000);
 
@@ -219,7 +220,6 @@ export function ProjectCard({
                 href={project.liveUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                icon="🔗"
               >
                 Live Demo
               </Button>
@@ -229,7 +229,6 @@ export function ProjectCard({
                 href={project.githubUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                icon="📁"
               >
                 Source Code
               </motion.a>
@@ -253,7 +252,9 @@ export function ProjectCard({
         )}
 
         {project.featured && (
-          <p className={classes.featuredBadge}>⭐ Featured</p>
+          <p className={classes.featuredBadge}>
+            <Star /> Featured
+          </p>
         )}
       </div>
 

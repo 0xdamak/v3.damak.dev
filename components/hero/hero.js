@@ -159,14 +159,7 @@ export function Hero() {
           />
         </div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 4 }}
-          className={classes.socialSection}
-        >
-          <SocialIcons delay={4} />
-        </motion.div>
+        <SocialIcons delay={1.5} />
       </div>
 
       <div className={classes.backgroundElements}>

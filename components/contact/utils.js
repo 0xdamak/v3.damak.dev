@@ -1,3 +1,5 @@
+import { Email } from "../../public/svg/icons";
+
 export const containerVariants = {
   hidden: { opacity: 0 },
   visible: {
@@ -24,7 +26,7 @@ export const itemVariants = {
 
 export const contactMethods = [
   {
-    icon: "📧",
+    icon: <Email />,
     title: "Email",
     value: "damak.dev@gmail.com",
     href: "mailto:damak.dev@gmail.com",

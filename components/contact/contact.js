@@ -76,8 +76,8 @@ export function Contact() {
                   }
                   className={classes.contactMethod}
                   whileHover={{
-                    scale: 1.01,
-                    transition: { type: "spring", stiffness: 300 },
+                    scale: 1.005,
+                    transition: { type: "spring", stiffness: 100 },
                   }}
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
@@ -236,7 +236,6 @@ export function Contact() {
                 type="submit"
                 loading={loading}
                 loadingText="Sending..."
-                icon="🚀"
                 className={classes.submitButton}
               >
                 Send Message
